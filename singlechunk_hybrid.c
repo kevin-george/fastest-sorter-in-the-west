@@ -8,7 +8,7 @@
 #define SIZE 1073741824
 #define SMALL 10 
 
-long int *array;
+long int array[SIZE];
 
 void insertion_sort(long int q) {
   for(int i = 1; i < q; i++) {
@@ -78,7 +78,9 @@ int main() {
   if(fread((void *)array, sizeof(long int), SIZE, fdr) != SIZE) exit(1);
   quick_sort(0, SIZE - 1);
   insertion_sort(SIZE);
-  close(fd);
+  fclose(fdr);
+  FILE *fdw = fopen("chunk0", "wb");
   if(fwrite((void *)array, sizeof(long int), SIZE, fdw) != SIZE) exit(1);
+  fclose(fdw);
   return 0;
 }  

@@ -75,6 +75,7 @@ void quick_sort(long int p,long int q) {
 
 int main() {
   int fd = open("../cop5570a/test0", O_RDONLY);
+  //We are reading chunks in 8GB at a time
   size_t size = SIZE * sizeof(long int);
   array = (long int *)mmap(NULL, size, PROT_READ|PROT_WRITE, MAP_PRIVATE, fd, 0);
   
