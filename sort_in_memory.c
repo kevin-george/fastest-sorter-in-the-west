@@ -72,7 +72,7 @@ void quick_sort(long *array, long p, long q) {
 
 int main(int argc, char *argv[]) {
   if(argc < 2) {
-    printf("\n Usage is ./sort_fast <input_file>");
+    printf("\n Usage is ./fast <input_file>");
   }
   FILE *fdr = fopen(argv[1], "rb");
 
